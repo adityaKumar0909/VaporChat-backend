@@ -1,5 +1,6 @@
 package com.vaporlabs.chat.entity;
 
+import com.vaporlabs.chat.enums.LobbyTTL;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,12 +16,12 @@ import java.util.UUID;
 @RedisHash(value = "Lobby")
 public class Lobby {
     @Id
-    private UUID id;
+    private String id;
 
     private String joinCode;
 
     private LocalDateTime createdAt;
 
     @TimeToLive
-    private long ttl;
+    private Long ttl;
 }
